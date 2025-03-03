@@ -1,3 +1,4 @@
+from pathlib import Path
 """
 Пример работы:
 Приложение для управления задачами.
@@ -28,4 +29,11 @@ while exit != True:
     if answer == "exit":
         print("Вы закончили работу программы")
         exit = True
-        
+ 
+   
+
+def check_file_exists(file_path):
+    
+    path = Path(file_path)
+    
+    return path.is_file()
