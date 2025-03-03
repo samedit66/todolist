@@ -15,6 +15,22 @@
 1,Сходить в магазин,Купить молоко,Не сделано
 """
 
+def edit_task():
+    index=input("Введите номер")
+    new_title=input("Введите новый заголовок")
+    new_desc=input("Введите описание для задач")
+    
+    if index=='' or new_title=='' or new_desc=='':
+        print("Введите полностью edit")
+
+    f=open("task.txt", 'r')
+    a=[]
+    oke=f.readlines()
+    for ok in oke:
+        if index==oke[ok]:
+            a.append(new_title,new_desc)
+   
+    
 
 print("Приложение для добавления, удаления и изменения заметок.")
 
@@ -28,4 +44,10 @@ while exit != True:
     if answer == "exit":
         print("Вы закончили работу программы")
         exit = True
+    elif answer=="edit":
+        edit_task()
+
+
+
         
+     
