@@ -28,4 +28,17 @@ while exit != True:
     if answer == "exit":
         print("Вы закончили работу программы")
         exit = True
-        
+
+
+
+def search(mtrx):
+    search_word = input("введите слово для поиски")
+    has_found = []
+    
+
+    for row  in mtrx:
+      for value in row:
+        if mtrx[row][value] == search_word:
+           has_found.append(mtrx[row])
+    print(f'по вашему запросу найдено: \n {has_found}')
+    return search_word,has_found
