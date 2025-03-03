@@ -17,10 +17,24 @@
 
 def add_task(title, description):
     with open('tasks.txt', 'r+', encoding='utf-8') as f:
-        text = f.read()
+        text = f.readlines()
+
+        try:
+            num = str(int(text[-1].split('|')[0])+1)
+        except:
+            num = '1'
+
+        status = 'не сделано'
+        f.write(f'{num}|{title}|{description}|{status}\n')
+
+def list_tasks():
+    print('список всех задач:')
+
+    with open('tasks.txt', 'r', encoding='utf-8') as f:
         
-        num = f.readline(-1).split(',')[0] if text != '' else '1'
-        f.write(f'{num},{title},{description},не сделано')
+        for e in f.readlines():
+            print(e.replace('|', ', ')[:-1])
+        print()
 
 
 print("Приложение для добавления, удаления и изменения заметок.")
