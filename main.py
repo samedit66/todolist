@@ -27,11 +27,13 @@ def add_task(title, description):
         status = 'не сделано'
         f.write(f'{num}|{title}|{description}|{status}\n')
 
+        print('сохранено\n')
+
 def list_tasks():
     print('список всех задач:')
 
     with open('tasks.txt', 'r', encoding='utf-8') as f:
-        
+
         for e in f.readlines():
             print(e.replace('|', ', ')[:-1])
         print()
@@ -49,4 +51,7 @@ while exit != True:
     if answer == "exit":
         print("Вы закончили работу программы")
         exit = True
-        
+    elif answer == 'list':
+        list_tasks()
+    elif answer == 'add':
+        add_task(input('введите заголовок: '), input('введите обозначение: '))
