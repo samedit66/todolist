@@ -32,7 +32,9 @@ while exit != True:
 
 
 def search(mtrx):
-    search_word = input("введите слово для поиски")
+    a = open('tasks.txt')
+    
+    search_word = input("введите слово для поиска ")
     has_found = []
     
 
@@ -42,3 +44,6 @@ def search(mtrx):
            has_found.append(mtrx[row])
     print(f'по вашему запросу найдено: \n {has_found}')
     return search_word,has_found
+
+
+
