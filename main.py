@@ -15,6 +15,13 @@
 1,Сходить в магазин,Купить молоко,Не сделано
 """
 
+def add_task(title, description):
+    with open('tasks.txt', 'r+', encoding='utf-8') as f:
+        text = f.read()
+        
+        num = f.readline(-1).split(',')[0] if text != '' else '1'
+        f.write(f'{num},{title},{description},не сделано')
+
 
 print("Приложение для добавления, удаления и изменения заметок.")
 
