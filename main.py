@@ -1,3 +1,4 @@
+from pathlib import Path
 """
 Пример работы:
 Приложение для управления задачами.
@@ -31,6 +32,7 @@ while exit != True:
 
 
 
+
 def search(mtrx):
     a = open('tasks.txt','r',encoding='utf-8')
     mtrx = a.readlines()
@@ -46,4 +48,14 @@ def search(mtrx):
     return search_word,has_found
 
 
+
+
+ 
+   
+
+def check_file_exists(file_path):
+    
+    path = Path(file_path)
+    
+    return path.is_file()
 
