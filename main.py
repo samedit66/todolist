@@ -32,8 +32,8 @@ while exit != True:
 
 
 def search(mtrx):
-    a = open('tasks.txt')
-    
+    a = open('tasks.txt','r',encoding='utf-8')
+    mtrx = a.readlines()
     search_word = input("введите слово для поиска ")
     has_found = []
     
