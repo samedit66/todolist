@@ -34,16 +34,22 @@ while exit != True:
 def search(mtrx):
     a = open('tasks.txt','r',encoding='utf-8')
     mtrx = a.readlines()
+    mtrx2 = []
+
+    for i in mtrx:
+      mtrx2 = i.replace('\n' , ' ')
+
     search_word = input("введите слово для поиска ")
     has_found = []
     
 
-    for row  in mtrx:
+    for row  in mtrx2:
       for value in row:
         if mtrx[row][value] == search_word:
            has_found.append(mtrx[row])
     print(f'по вашему запросу найдено: \n {has_found}')
-    return search_word,has_found
+    a.close
+    return search_word,has_found,mtrx2
 
 
 
